@@ -1,0 +1,67 @@
+/*cart toggle button*/
+.cart-toggle-button{
+    padding: 10px 20px;
+    background-color: #333;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size:16px;
+    margin:20px;
+}
+
+
+/* Close button */
+.close-cart {
+    position: absolute;  /* Make it absolutely positioned inside the cart container */
+    top: 10px;  /* Position it at the top */
+    right: 10px;  /* Position it at the right */
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 101;  /* Ensure it appears above other elements */
+}
+.close-cart:hover {
+    background-color: darkred;
+}
+
+.cart-container{
+    position: fixed;
+    top:0;
+    right:0;
+    width:400px;
+    height:100%;
+    background-color:white;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    padding:20px;
+    box-sizing: border-box;
+    z-index:100;
+}
+
+.cart-container ul{
+    list-style: none;
+    padding:0;
+}
+
+.cart-container li{
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+.cart-container h2 {
+    color: black; /* Set text color to black for the title */
+}
+.cart-container h3{
+    margin:0;
+    font-size:18px;
+    color:black;
+}
+
+.cart-container p{
+    margin: 5px 0;
+    color:black;
+}
