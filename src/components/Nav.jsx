@@ -14,7 +14,7 @@ function Nav({ cart, setCart }){
     }
     return(
         <div className='nav'>
-            <h1 className='headertext'>Viva Fashions</h1>  
+            <h1 className='headertext'>VIVA Fashions</h1>  
             <Link to="/">
                 <div>Home</div>
             </Link>

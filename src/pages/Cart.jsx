@@ -4,6 +4,9 @@ import './Cart.css'
 
 function Cart({ cartItems, setCart }){
    
+    const [subtotal, setSubtotal] = useState(0);
+    const [totalTax, setTotalTax] = useState(0);
+
       //Handle adding quantity
       const handleAdd = (index) =>{
         const updatedCart =[...cartItems];
@@ -24,6 +27,31 @@ function Cart({ cartItems, setCart }){
         const updatedCart= cartItems.filter((items, i) => i !== index);
         setCart(updatedCart);        
       }
+
+      useEffect(() =>{
+        let calculatedSubTotal = 0;
+        let calculatedTax =0;
+
+        cartItems.forEach((item)=>{
+            const itemPrice= parseFloat(item.price["$numberDecimal"])
+            const itemQuantity = isNaN(item.quantity) || item.quantity <= 0 ? 1 : item.quantity; 
+
+            console.log(item.price["$numberDecimal"]);
+            console.log(itemQuantity);
+           
+            
+            if (!isNaN(itemPrice) && itemQuantity > 0) { 
+                const itemTotal = itemPrice * itemQuantity;
+                const itemTax = itemTotal * (item.tax/100)
+
+                calculatedSubTotal += itemTotal;
+                calculatedTax += itemTax;
+            }
+        },[cartItems]);
+
+        setSubtotal(calculatedSubTotal);
+        setTotalTax(calculatedTax);
+      },[cartItems])
    
     return(
       
@@ -42,7 +70,7 @@ function Cart({ cartItems, setCart }){
                                 <div className='cart-item-details-container'>
                                     <div className='cart-item-details'>
                                         <p className="carttitle">{item.prodname}</p>
-                                        <p className="cartprice">Price: ${item.price["$numberDecimal"]}</p>
+                                        <p className="cartprice">Price: ${parseFloat(item.price["$numberDecimal"]).toFixed(2)}</p>
                                         <p className="carttitle">Size: {item.size}</p>
                                     </div>
                                     <div className="cart-item-quantity">
@@ -59,11 +87,24 @@ function Cart({ cartItems, setCart }){
                                             setCart(updatedCart);                                            
                                             }}
                                         />
-                                        <button className ="quantity-btn" onClick={() => handleAdd(index)}>+</button>                                         
+                                        <button className ="quantity-btn" onClick={() => handleAdd(index)}>+</button> 
+                                        <span className='cartprice'>
+                                        
+                                            {
+                                                 (() => {
+                                                    const price = parseFloat(item.price["$numberDecimal"]);
+                                                    const quantity = isNaN(item.quantity) || item.quantity <=0 ? 1 : item.quantity;
+                                                    const total = isNaN(price) || price <= 0 || !item.price["$numberDecimal"]
+                                                      ? '0.00'
+                                                      : (price * quantity).toFixed(2);  //quantity * price
+                                                    return `$${total}`;
+                                                  })()
+                                              }
+                                        </span>                                   
                                     </div>
                                     <div>
                                         <button className='delete-btn' onClick={() => handleDelete(index)}>Delete</button>
-                                    </div>
+                                    </div>                                  
                                     
                                 </div>
                                                                 
@@ -72,13 +113,21 @@ function Cart({ cartItems, setCart }){
                     </ul>
                 )}
                   <div className="cart-summary">
-                    <p className='carttitle'><strong>Subtotal:</strong> $79.00 USD</p>
+                    <div className='subtotal-container'>
+                        <div>
+                            <p className='textsubtotal'>Subtotal:</p>
+                        </div>
+                        <div>
+                            <p className='cart-subtotal'>${subtotal.toFixed(2)} USD</p>
+                        </div>
+                    </div>
+                     
                     <p className='carttitle'>Taxes and shipping calculated at checkout</p>
                     <div className="terms-container carttitle">
                         <input type="checkbox" id="terms" />
                         <label htmlFor="terms">I agree with the terms and conditions.</label>
                     </div>
-                    <div>                        
+                    <div className='checkout-button-container '>                        
                         <button className="bg-black text-white p-2 rounded-md w-32 h-8 flex items-center justify-center cursor-pointer text-xs">Check Out</button>
                     </div>
                 </div>

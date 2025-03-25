@@ -21,7 +21,8 @@
     top:0;
     right:0;
     width:400px;
-    height:100%;
+    height:80%;
+    padding-bottom: 120px; /* Add padding for the fixed summary at the bottom */      
     background-color:#f4f4f4;
     box-shadow: -2px 0 2px rgba(0,0,0,0.5);
     transition: right 0.3s ease;
@@ -37,6 +38,7 @@
     margin-bottom: 15px;
     padding:10px;
     background-color: #fff;
+    flex-grow: 1;
 }
 
 .cart-container ul{
@@ -180,6 +182,29 @@
 .cart-summary p {
     margin: 10px 0;   
 }
+.textsubtotal{
+    color:rgb(212, 175, 55); 
+    text-align: center;
+    align-items: left; 
+    margin: 0; 
+    font-size: 1rem; 
+    flex: 1;
+}
+.cart-subtotal {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+    color: #d4af37 !important;
+    font-weight: bold;
+}
+
+.checkout-button-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the button */
+    align-items: center; /* Vertically center the button */
+    width: 100%; /* Ensure the container takes up full width */
+    margin-top: 20px; /* Optional: add margin if you want some space above the button */
+  }
 
 .cart-summary .terms-container {
     display: flex;
@@ -190,5 +215,29 @@
 .cart-summary .terms-container input {
     margin-right: 10px;
 }
+  .subtotal-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .cart-summary {
+    position: fixed;
+    bottom: 0;    
+    right: 0;
+    width:400px;   
+    background-color:#d4d4d4;
+    overflow-y: auto;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    z-index: 10; 
+  }
+
+ 
+  
+.textsubtotal {
+    margin-right: 8px;
+  }
 
 
