@@ -18,6 +18,9 @@ function Nav({ cart, setCart }){
             <Link to="/">
                 <div>Home</div>
             </Link>
+            <Link to="/admin/viewproduct">
+                <div>Manage Product</div>
+            </Link>
             <div onClick ={toggleCart} style={{cursor: 'pointer', marginRight: '30px'}}>
                 <div> Cart</div>  
                 {cart.length > 0 && (

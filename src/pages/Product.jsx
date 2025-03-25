@@ -12,7 +12,7 @@ function Product({addToCart}){
      //to toggle cart visibility
       const[isCartOpen, setIsCartOpen] = useState(false);
 
-  // to get list of products from db
+  // to get list of products from db based on category and search filter
   const getProducts = async(prodcategory, prodsearch) =>{
     try{
       const response = await fetch(`/api/product?category=${prodcategory}&search=${prodsearch}`);
