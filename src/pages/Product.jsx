@@ -15,7 +15,7 @@ function Product({addToCart}){
   // to get list of products from db
   const getProducts = async(prodcategory, prodsearch) =>{
     try{
-      const response = await fetch(`http://localhost:4000/api/product?category=${prodcategory}&search=${prodsearch}`);
+      const response = await fetch(`/api/product?category=${prodcategory}&search=${prodsearch}`);
       const data = await response.json();
 
       if (!response.ok) {  
@@ -34,10 +34,7 @@ function Product({addToCart}){
     getProducts('','');    
   },[]) 
 
-//just for testing in console.log.  useState -cart is not refreshing imm. after update
-useEffect(()=>{
-    console.log(`Product cart ${cart}`);
-},[cart]);
+
 
   return (
     <>   

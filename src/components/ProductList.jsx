@@ -19,8 +19,8 @@ function ProductList({product, addToCart}){
                         <img className="rounded-t-lg w-64 h-80 hover-image"  src={product.image} alt="product" 
                        />
                     </div>
-                    <div className="flex flex-col items-center justify-center">
-                        <div className="font-normal text-gray-700 dark:text-gray-400">
+                    <div className="flex flex-col items-center justify-center w-full">
+                        <div className="font-normal text-gray-700 dark:text-gray-400 text-center">
                             <h3 className="title">
                                 {product.prodname}
                             </h3>
@@ -36,7 +36,7 @@ function ProductList({product, addToCart}){
                         </div>
                     </div>
                     <div className="mt-4 mb-4">
-                        <button type="button" className="bg-black text-white p-2 rounded-md w-32 h-8 flex items-center justify-center cursor-pointer" onClick={handleAddToCart}>Add to Cart</button>
+                        <button type="button" className="bg-black text-white p-2 rounded-md w-32 h-8 flex items-center justify-center cursor-pointer text-xs" onClick={handleAddToCart}>ADD TO CART</button>
                     </div>
                 </div>
             </div>

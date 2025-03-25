@@ -1,15 +1,3 @@
-/*cart toggle button*/
-.cart-toggle-button{
-    padding: 10px 20px;
-    background-color: #333;
-    color: black;
-    border: none;
-    cursor: pointer;
-    font-size:16px;
-    margin:20px;
-}
-
-
 /* Close button */
 .close-cart {
     position: absolute;  /* Make it absolutely positioned inside the cart container */
@@ -25,22 +13,30 @@
     z-index: 101;  /* Ensure it appears above other elements */
 }
 .close-cart:hover {
-    background-color: darkred;
+    background-color: #d4af37;
 }
 
-.cart-container{
+.cart-container{    
     position: fixed;
     top:0;
     right:0;
     width:400px;
     height:100%;
-    background-color:white;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    background-color:#f4f4f4;
+    box-shadow: -2px 0 2px rgba(0,0,0,0.5);
     transition: right 0.3s ease;
     overflow-y: auto;
     padding:20px;
     box-sizing: border-box;
     z-index:100;
+}
+
+.cart-item{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding:10px;
+    background-color: #fff;
 }
 
 .cart-container ul{
@@ -64,4 +60,111 @@
 .cart-container p{
     margin: 5px 0;
     color:black;
+}
+
+.cart-item{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:15px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius:8px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-item-image-container {
+    width: 25%; /* Set the width of the container holding the image to 25% */
+    display: flex; /* Flexbox to align the image */
+    justify-content: center; /* Center the image within its container */
+}
+
+.cart-item-image{
+    width: 80px;
+    height: 80px;  
+    border-radius:5px;
+}
+
+.cart-item-details-container {
+    width: 75%; /* Set the width of the container holding the details to 75% */
+    padding-left: 15px; /* Optional: Add some space between image and details */
+}
+
+.cart-item-details{
+    flex-grow:1;
+    margin-left:15px;
+}
+
+.cart-item-title{
+    font-size:18px;
+    font-weight: bold;
+}
+
+.cart-item-size,
+.cart-item-price{
+    font-size:14px;
+}
+
+.cart-item-quantity{
+    display:flex;
+    align-items: center;
+    gap:10px;
+    margin-top: 10px;
+}
+
+.delete-btn {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 10px;
+    margin-top: 10px; /* Add space between the item and the delete button */
+}
+
+.delete-btn:hover {
+    background-color: #d4af37;
+}
+
+.quantity-btn {
+    padding: 5px 10px;
+    font-size: 8px;
+    cursor: pointer;
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #d4af37; /* Hover effect */
+}
+
+.quantity-input {
+    width: 40px;
+    text-align: center;
+    font-size: 8px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color:black;
+}
+
+.cart-item button {
+    margin-left: 10px; /* Add margin to the delete button for separation */
+}
+
+.carttitle{
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+    text-align: left;
+}
+
+.cart-item .cartprice {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+    text-align: left;
+    color: #d4af37 !important;
+    font-weight: bold;
 }

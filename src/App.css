@@ -9,10 +9,32 @@
     color:white;
     gap:30px;
     font-size: 1em;
-    padding: 5px;
-    margin-top: 10px; 
-    margin-bottom: 10px;  
+    padding: 5px;   
+    margin-bottom: 10px;        
 }
+
+.headertext{
+    color:rgb(212, 175, 55); 
+    text-align: left;
+    align-items: left;
+    font-size:20px ;
+    font-weight: bold; 
+}
+.cartcountbadge{
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: rgb(212, 175, 55); 
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
 
 .img-container{
     display: flex;
@@ -28,8 +50,8 @@
     font-family: 'Roboto', sans-serif;
     font-size: 0.8rem;
     text-align: center;
+    align-items: center;
 }
-
 
 .hover-image {
     transition: transform 0.5s ease; /* Smooth transition for the transform property */
