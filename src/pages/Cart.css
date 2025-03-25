@@ -168,3 +168,27 @@
     color: #d4af37 !important;
     font-weight: bold;
 }
+
+/* Cart summary styling */
+.cart-summary {
+    padding: 20px;
+    background-color: #d4d4d4;
+    border-radius: 8px; 
+    margin-top: 20px;
+}
+
+.cart-summary p {
+    margin: 10px 0;   
+}
+
+.cart-summary .terms-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.cart-summary .terms-container input {
+    margin-right: 10px;
+}
+
+

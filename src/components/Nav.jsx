@@ -14,14 +14,14 @@ function Nav({ cart, setCart }){
     }
     return(
         <div className='nav'>
-            <h1 className='headertext'>Viva Fashion</h1>  
+            <h1 className='headertext'>Viva Fashions</h1>  
             <Link to="/">
                 <div>Home</div>
             </Link>
-            <div onClick ={toggleCart} style ={{cursor :'pointer'}}>
+            <div onClick ={toggleCart} style={{cursor: 'pointer', marginRight: '30px'}}>
                 <div> Cart</div>  
                 {cart.length > 0 && (
-                    <span >{cart.length}</span>
+                    <span className='cartcountbadge'>{cart.length}</span>
                 )}                          
             </div>
 

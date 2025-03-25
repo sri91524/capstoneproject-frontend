@@ -28,7 +28,8 @@ function Cart({ cartItems, setCart }){
     return(
       
             <div className ="cart-container">
-                <h2>Your Cart</h2>
+                <h2>SHOPPING CART</h2>
+                <hr/>
                 {cartItems.length === 0 ? (
                     <p>Your cart is empty!</p>
                 ):(
@@ -58,7 +59,9 @@ function Cart({ cartItems, setCart }){
                                             setCart(updatedCart);                                            
                                             }}
                                         />
-                                        <button className ="quantity-btn" onClick={() => handleAdd(index)}>+</button> 
+                                        <button className ="quantity-btn" onClick={() => handleAdd(index)}>+</button>                                         
+                                    </div>
+                                    <div>
                                         <button className='delete-btn' onClick={() => handleDelete(index)}>Delete</button>
                                     </div>
                                     
@@ -68,6 +71,17 @@ function Cart({ cartItems, setCart }){
                         ))}
                     </ul>
                 )}
+                  <div className="cart-summary">
+                    <p className='carttitle'><strong>Subtotal:</strong> $79.00 USD</p>
+                    <p className='carttitle'>Taxes and shipping calculated at checkout</p>
+                    <div className="terms-container carttitle">
+                        <input type="checkbox" id="terms" />
+                        <label htmlFor="terms">I agree with the terms and conditions.</label>
+                    </div>
+                    <div>                        
+                        <button className="bg-black text-white p-2 rounded-md w-32 h-8 flex items-center justify-center cursor-pointer text-xs">Check Out</button>
+                    </div>
+                </div>
             </div>        
     );
 }

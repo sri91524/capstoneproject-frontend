@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './Form.css'
 
 function Form(props){
 
@@ -15,19 +16,35 @@ function Form(props){
 
 
 return(
-    <div>
-        <form onSubmit={handleSubmit} className="space-y-6">
-            <select name="category" value={formData.category} onChange ={handleChange} className="border p-2 rounded-md w-64 h-10">
-                <option value="">select category</option>
-                <option value="women">Women</option>
-                <option value="men">Men</option>
-                <option value="kids">Kids</option>
-            </select>
-            <input type="text" name ="searchterm" value={formData.searchterm} onChange={handleChange}  className="border p-2 rounded-md w-64 h-10"/>
-            
-            <input type ="submit" value ="Search" className="text-white p-2 rounded-md w-30 h-10 cursor-pointer btnSearch" />
-        </form>
-    </div>
+    <div className="form-container">
+    <form onSubmit={handleSubmit} className="form-content flex items-center gap-2">
+        <select 
+            name="category" 
+            value={formData.category} 
+            onChange={handleChange} 
+            className="border rounded-md h-6 text-xs"
+        >
+            <option value="">Select Category</option>
+            <option value="women">Women</option>
+            <option value="men">Men</option>
+            <option value="kids">Kids</option>
+        </select>
+
+        <input 
+            type="text" 
+            name="searchterm" 
+            value={formData.searchterm} 
+            onChange={handleChange} 
+            className="border p-1 rounded-md h-6 text-xs"
+        />
+        
+        <input 
+            type="submit" 
+            value="Search" 
+            className="text-white p-1 rounded-md h-4 cursor-pointer btnSearch text-xs"
+        />
+    </form>
+</div>
 )
 };
 

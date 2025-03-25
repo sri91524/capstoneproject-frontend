@@ -1,0 +1,32 @@
+.form-container {
+    display: flex;
+    justify-content: flex-end; /* Aligns the form to the right */
+    padding-right: 20px; /* Optional: Add some padding to the right */
+}
+
+.form-content {
+    display: flex;
+    align-items: center; /* Vertically aligns the items in the form */
+    gap: 10px; /* Adds spacing between the form elements */
+    flex-wrap: nowrap; /* Prevents wrapping of form controls */
+}
+
+.form-control {
+    height: 20px; /* Reduced height for form controls */
+    padding: 0 6px; /* Reduced padding to maintain the reduced height */
+    font-size: 12px; /* Adjust font size for consistency */
+    line-height: 24px; /* Vertically center text inside the controls */
+}
+
+input[type="submit"] {
+    height: 24px; /* Ensure the button has the same height as form controls */
+    padding: 0 6px; /* Padding for the button */
+    cursor: pointer;
+    font-size: 12px; /* Same font size for consistency */
+    line-height: 24px; /* Ensure text is vertically aligned inside the button */
+    display: inline-flex; /* Ensures the button stays inline with other items */
+    align-items: center; /* Vertically center the button text */
+    background-color: rgb(212, 175, 55); /* Button color */
+    border: none; /* Optional: Remove button border */
+    border-radius: 4px; /* Optional: Add rounded corners */
+}
