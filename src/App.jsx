@@ -6,6 +6,7 @@ import Cart from './pages/Cart'
 import Product from './pages/Product'
 import ViewProduct from './pages/Admin/ViewProduct';
 import AddOrEditProduct from './pages/Admin/AddOrEditProduct';
+import SearchNews from './pages/SearchNews';
 import Nav from './components/Nav'
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
         {/*Product Edit route*/}
         <Route path="/admin/addoreditproduct/:productId" element={<AddOrEditProduct/>}/>
         <Route path="/cart" element={<Cart cartItems={cart} setCart={setCart}/>} />
+        <Route path="/searchnews" element={<SearchNews />} />
       </Routes>
     </div>
   )

@@ -132,14 +132,14 @@ function AddOrEditProduct(){
                     <select name="size" value ={newProduct.size} onChange={handleChange} className={formControlClass} required>
                         <option value=''>Select size</option>
                         <option value='S'>S</option>
-                        <option value='S'>M</option>
-                        <option value='S'>L</option>
-                        <option value='S'>XL</option>
+                        <option value='M'>M</option>
+                        <option value='L'>L</option>
+                        <option value='XL'>XL</option>
                     </select>
                 </div>
                 <div className='mb-4 grid grid-cols-2 gap-2'>
                     <label className='text-sm font-medium text-gray-700'>Price</label>
-                    <input type="number" name="price" value={newProduct.price["$numberDecimal"]} onChange={handleChange} className={formControlClass} required/>
+                    <input type="number" name="price" value={newProduct.price["$numberDecimal"]} onChange={handleChange} className={formControlClass} step="0.01" required/>
                     {error.price && <span className="text-red-500 text-sm">{error.price}</span>}
                 </div>
                 <div className='mb-4 grid grid-cols-2 gap-2'>

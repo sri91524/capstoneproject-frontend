@@ -27,13 +27,17 @@ function Nav({ cart, setCart }){
                     <span className='cartcountbadge'>{cart.length}</span>
                 )}                          
             </div>
-
             {isCartOpen &&
                 <div className ="cart-container">
                     <button className="close-cart" onClick={toggleCart}>X</button>
                     <Cart cartItems={cart} setCart={setCart}></Cart>
                 </div>
             }
+            <Link to="/searchnews">
+                <div>News Article</div>
+            </Link>
+
+            
             
         </div>
     )

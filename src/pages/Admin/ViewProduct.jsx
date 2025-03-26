@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import {createProduct,
-    getAllProducts,
-    getProduct,
-    updateProduct,
+    getAllProducts,  
     deleteProduct
 } from '../../../src/api/product'
 import { PencilIcon, TrashIcon } from '@heroicons/react/solid';
 
 function ViewProduct(){
     const[products, setProducts] = useState([]);
+    const [message, setMessage] = useState(null);
+
     const navigate = useNavigate();
-    
+       
     //Fetch all products from database thro' interface product.js in src/api
     useEffect(() =>{
         const getAllProd = async() =>{
@@ -29,6 +29,21 @@ function ViewProduct(){
         navigate(`/admin/addoreditproduct/${product._id}`);
     }
 
+    const handleDelete = async(productId) => {
+        
+            const isConfirmed = window.confirm('Are you sure want to delete this product?');
+            if(!isConfirmed) return;
+            try{
+                await deleteProduct(productId);
+                setProducts(prevProducts => prevProducts.filter(product => product._id !== productId));
+                setMessage({type:'success', text:'Product deleted successfully'});
+
+        }catch(error){
+            console.error("Failed to delete product:", error);
+            setMessage({type: 'error', text: 'Failed to delete product. Please try again.'})
+        }
+    }
+
     return(
         <>
         <div className="container mx-auto p-6">
@@ -40,6 +55,15 @@ function ViewProduct(){
             </Link>
         </div>
         <div>
+            {/*show success or error message*/}
+            {message &&
+                (
+                    <div className={`p-4 mt-4 text-center ${message.type === 'success' ? 'text-green-500' : 'text-red-500'}`}> 
+                        {message.text}
+                    </div>
+                ) 
+            }
+            
             <table className="min-w-full text-sm text-left text-gray-500 m-2">
                 <thead className="bg-gray-100 text-xs text-gray-700 uppercase">
                     <tr>
@@ -66,9 +90,9 @@ function ViewProduct(){
                             <td>
                             
                                 <button onClick ={() => handleEdit(product)}>
-                                    <PencilIcon className="h-5 w-5 text-green-800 hover:text-blue-700 cursor-pointer" />
+                                    <PencilIcon className="h-5 w-5 text-green-800 hover:text-green-700 cursor-pointer" />
                                 </button>&nbsp;&nbsp;
-                                <button>
+                                <button onClick={() =>handleDelete(product._id)}>
                                     <TrashIcon className="h-5 w-5 text-yellow-900 hover:text-red-700 cursor-pointer" />
                                 </button>
                                 </td>
