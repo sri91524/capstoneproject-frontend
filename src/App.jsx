@@ -5,7 +5,7 @@ import './App.css'
 import Cart from './pages/Cart'
 import Product from './pages/Product'
 import ViewProduct from './pages/Admin/ViewProduct';
-import AddProduct from './pages/Admin/AddProduct';
+import AddOrEditProduct from './pages/Admin/AddOrEditProduct';
 import Nav from './components/Nav'
 
 function App() {
@@ -43,7 +43,9 @@ function App() {
        <Routes>
         <Route path="/" element={<Product addToCart={addToCart}/>}/>
         <Route path="/admin/viewproduct" element={<ViewProduct/>}/>
-        <Route path="/addproduct" element={<AddProduct/>}/>
+        <Route path="/admin/addoreditproduct" element={<AddOrEditProduct/>}/>
+        {/*Product Edit route*/}
+        <Route path="/admin/addoreditproduct/:productId" element={<AddOrEditProduct/>}/>
         <Route path="/cart" element={<Cart cartItems={cart} setCart={setCart}/>} />
       </Routes>
     </div>

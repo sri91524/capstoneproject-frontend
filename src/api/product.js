@@ -2,8 +2,12 @@ import axios from 'axios';
 
 //create new product
 export async function createProduct(product){
-    const res = await axios.post("/api/product",{product});
-    return res.data;
+    try{
+        const res = await axios.post("/api/product",product);
+        return res.data;
+    }catch(error){
+        console.log(`api error -${error}`);
+    }    
 }
 
 //Get all products
@@ -20,7 +24,7 @@ export async function getProduct(prodId){
 
 //update a product
 export async function updateProduct(prodId, product){
-    const res = await axios.patch(`/api/product/${prodId}`,{product});
+    const res = await axios.patch(`/api/product/${prodId}`,product);
     return res.data;
 }
 

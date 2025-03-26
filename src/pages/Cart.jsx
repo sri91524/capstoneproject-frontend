@@ -1,6 +1,7 @@
 
 import {useState, useEffect} from 'react'
 import './Cart.css'
+import { PencilIcon, TrashIcon } from '@heroicons/react/solid';
 
 function Cart({ cartItems, setCart }){
    
@@ -79,7 +80,7 @@ function Cart({ cartItems, setCart }){
                                             type="number"
                                             value={item.quantity || 1}  // Directly set the value from state
                                             min="1"
-                                            className="quantity-input"
+                                            className="quantity-input w-8"
                                             onChange={(e) => {
                                             const updatedCart = [...cartItems];
                                             const newQuantity = parseInt(e.target.value, 10) || 1;  // Ensure valid number
@@ -100,11 +101,14 @@ function Cart({ cartItems, setCart }){
                                                     return `$${total}`;
                                                   })()
                                               }
-                                        </span>                                   
+                                        </span> 
+                                        <div>
+                                            <button onClick={() => handleDelete(index)}>
+                                                <TrashIcon className="h-5 w-5 text-yellow-900 hover:text-red-700 cursor-pointer" />
+                                            </button>
+                                        </div>                                   
                                     </div>
-                                    <div>
-                                        <button className='delete-btn' onClick={() => handleDelete(index)}>Delete</button>
-                                    </div>                                  
+                                                                     
                                     
                                 </div>
                                                                 

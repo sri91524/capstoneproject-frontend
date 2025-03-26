@@ -113,16 +113,6 @@
     margin-top: 10px;
 }
 
-.delete-btn {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 5px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 10px;
-    margin-top: 10px; /* Add space between the item and the delete button */
-}
 
 .delete-btn:hover {
     background-color: #d4af37;
@@ -143,11 +133,10 @@
     background-color: #d4af37; /* Hover effect */
 }
 
-.quantity-input {
-    width: 40px;
+.quantity-input {    
     text-align: center;
-    font-size: 8px;
-    padding: 5px;
+    font-size: 9px;
+    padding: 4px;
     border: 1px solid #ccc;
     border-radius: 5px;
     color:black;
