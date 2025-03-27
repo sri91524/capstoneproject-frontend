@@ -1,12 +1,36 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# RTT-60-2024 Class Repo
 
-Currently, two official plugins are available:
+## Description
+Capstone Project - Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Technologies
+Vite, React, Javascript, Tailwindcss (Heroicons), Axios
 
-## Expanding the ESLint configuration
+#### A link to live site -- 
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### Components and API
+--- NewsAPI used
+--- env file used to store API_Key and added in gitignore to avoid tracking in github
+--- React components like SearchForm, productlist and cart are developed
+--- React hooks like useState, useEffect are used
+--- interface is created to interact with api created for CRUD operation on db
+
+##### Functionality
+---- Browsing products -- User can search products using search form based on category or searchterm
+---- Product Display   -- Products will be displayed based on the search 
+----                      Addtocart functionality which enables user to add the product to the cart
+---- Shopping Cart     -- In cart, he can add/remove/delete product and based on it price and total will be calculated 
+----                      No. of items in the cart can be viewed on the cart menu
+---- Manage Products   -- Products can be managed by adding / editing/ deleting the product
+---- Thirdparty Api    -- thenewsapi is used to get news articles
+
+###### Approach
+---- useState & localstorage is used to handle the cart state across pages
+---- State is stored in App component and is passed to Product page -> productlist component -> cart -> nav
+---- Based on iscartopen state, cart div is toggled to show on and off
+---- View product grid, add/edit product form is used to manage products
+---- Products are stored in mongodb and managed via mongoose
+---- Axios is used to access thenewsapi and search by category/keyword
+---- exception handling performed using try..catch block
