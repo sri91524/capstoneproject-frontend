@@ -2,6 +2,7 @@ import Form from '../components/Form';
 import ProductList from '../components/ProductList';
 import Cart from './Cart'
 import { useState,useEffect } from 'react';
+const BASE_URL=import.meta.env.VITE_API_BASE_URL
 
 function Product({addToCart}){
 
@@ -15,7 +16,7 @@ function Product({addToCart}){
   // to get list of products from db based on category and search filter
   const getProducts = async(prodcategory, prodsearch) =>{
     try{
-      const response = await fetch(`/api/product?category=${prodcategory}&search=${prodsearch}`);
+      const response = await fetch(`${BASE_URL}/api/product?category=${prodcategory}&search=${prodsearch}`);
       const data = await response.json();
 
       if (!response.ok) {  

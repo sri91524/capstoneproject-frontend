@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import NewsSearchBar from '../components/NewsSearchBar';
 import NewsDisplay from '../components/NewsDisplay';
-import globalNewsImage from '../images/globalnews.jpg'
+import globalNewsImage from '../images/viva-img.jpg';
 
 function SearchNews(){
     const apiKey = import.meta.env.VITE_NEWS_API_KEY;
@@ -11,8 +11,8 @@ function SearchNews(){
         try{
             let url= `https://api.thenewsapi.com/v1/news/all?api_token=${apiKey}&search=${searchterm}&language=en&categories=${newscategory}`;
 
-            // const response = await fetch(url);
-            // const data = await response.json();           
+            const response = await fetch(url);
+            const data = await response.json();           
             setNews(data.data);  
             console.log(news);       
         }catch(e){
