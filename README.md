@@ -3,7 +3,7 @@
 # RTT-60-2024 Class Repo
 
 ## Description
-Capstone Project - Frontend
+Online Shopping 
 
 ### Technologies
 Vite, React, Javascript, Tailwindcss (Heroicons), Axios
