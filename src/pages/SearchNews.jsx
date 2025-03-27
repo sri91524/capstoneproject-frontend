@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import NewsSearchBar from '../components/NewsSearchBar';
 import NewsDisplay from '../components/NewsDisplay';
-import globalNewsImage from '../images/viva-img.jpg';
+import globalNewsImage from '../images/news.jpg';
 
 function SearchNews(){
     const apiKey = import.meta.env.VITE_NEWS_API_KEY;
