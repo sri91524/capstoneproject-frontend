@@ -25,7 +25,7 @@ function SearchNews(){
     },[])
     return(
         <>
-            <img src={globalNewsImage} alt="Global News" className="w-48 h-auto mb-4 rounded-lg" />
+            <img src={globalNewsImage} alt="Global News" className="w-24 h-24 mb-4 rounded-full" />
             <NewsSearchBar newssearch ={getNewsArticle}/>
             <div className='img-container'>
                 {                  
