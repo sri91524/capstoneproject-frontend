@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import './NewsSearch.css';
 
 function NewsSearchBar(props){
 
@@ -10,12 +11,12 @@ function NewsSearchBar(props){
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        props.newssearch(searchData.searchterm);
+        props.newssearch(searchData.category, searchData.searchterm);
     }
 
     return(      
-        <div className="form-container">
-            <form onSubmit ={handleSubmit} className="form-content-flex items-center gap-2">
+        <div className="search-container">
+            <form onSubmit ={handleSubmit} className="flex flex-row gap-4 items-center">
                 <select 
                     name="category"
                     value ={searchData.category}
@@ -32,7 +33,7 @@ function NewsSearchBar(props){
                         <option value="food">food</option>
                         <option value="travel">travel</option>
                     </select>
-                <input type="text" value={searchData.searchterm} onChange={handleChange}/>
+                <input type="text" name="searchterm" value={searchData.searchterm} className="border p-1 rounded-md h-6 text-xs" onChange={handleChange}/>
                 <input type="submit" value ="Search" 
                 className="text-white p-1 rounded-md h-4 cursor-pointer btnSearch text-xs"/>
             </form>

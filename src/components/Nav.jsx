@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {Link} from 'react-router-dom'
 import Cart from '../pages/Cart'
 import '../App.css'
+import bannerImage from '../images/viva-img.jpg'
 
 function Nav({ cart, setCart }){
 
@@ -13,7 +14,13 @@ function Nav({ cart, setCart }){
         setIsCartOpen(!isCartOpen);
     }
     return(
-        <div className='nav'>
+        
+    <div className="header-container">
+   
+        <div className='nav'> 
+            <div className="full-width-image">
+                <img src={bannerImage} alt="bannerImage" />
+            </div>           
             <h1 className='headertext'>VIVA Fashions</h1>  
             <Link to="/">
                 <div>Home</div>
@@ -36,10 +43,8 @@ function Nav({ cart, setCart }){
             <Link to="/searchnews">
                 <div>News Article</div>
             </Link>
-
-            
-            
-        </div>
+        </div>  
+    </div>
     )
 
 }

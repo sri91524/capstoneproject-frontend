@@ -57,11 +57,16 @@ function Cart({ cartItems, setCart }){
     return(
       
             <div className ="cart-container">
-                <h2>SHOPPING CART</h2>
+                <h2 class="text-xl font-semibold  text-blue-900">SHOPPING CART</h2>
                 <hr/>
                 {cartItems.length === 0 ? (
-                    <p>Your cart is empty!</p>
-                ):(
+                    <div className="flex flex-col items-center justify-center text-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-16 h-16 text-gray-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l3.6 7.2 1.2 2.4h6.4l1.2-2.4L19 3h2M6 3l3 6h9l3-6m-5 12v2m-1-2H7v2h7m0-2v-2H7v2h7zm1 2v2m0-2h3m0 0l1-3M4 6l1 3m0 0h2m0 0l1-3m7 13v-2H7z" />
+                        </svg>
+                            <p className="text-sm font-semibold text-gray-600 mt-4">Your cart is empty!</p>
+                    </div>
+                                        ):(
                     <ul>
                         {cartItems.map((item, index) => (
                             <li key={index} className='cart-item'>

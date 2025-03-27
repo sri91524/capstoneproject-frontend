@@ -16,7 +16,7 @@
 
 .headertext{
     color:rgb(212, 175, 55); 
-    text-align: center;
+    text-align: left;
     align-items: left;    
     font-weight: bold;
     margin: 0; 
@@ -64,3 +64,10 @@
 .hover-image:hover {
     transform: scale(1.1) !important; /* Slightly scale up the image on hover */
   }
+
+  .full-width-image img {
+    width: 100%;       /* Ensures the image spans the full width */
+    height: 50px;      /* Fixed height of the image */
+    object-fit:contain; /* Ensures the image fills the space without distorting */
+    border-radius: 50%; 
+}
