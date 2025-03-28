@@ -8,7 +8,7 @@ Online Shopping
 ### Technologies
 Vite, React, Javascript, Tailwindcss (Heroicons), Axios
 
-#### A link to live site -- 
+#### A link to live site -- https://sri-react-onlineshopping.netlify.app/
 
 #### Components and API
 1. NewsAPI used ( Env file used to store API_Key and added in gitignore to avoid tracking in github)
