@@ -4,11 +4,11 @@ import './Form.css'
 function Form(props){
 
     const [formData, setFormData] = useState({category:"",searchterm:""});
-
+    //onchanging form, form data is set
     const handleChange = (e) =>{
         setFormData({...formData, [e.target.name]:e.target.value});
     }
-
+    //category and search term will be passed as props to product.jsx page
     const handleSubmit = (e) =>{
         e.preventDefault();
         props.productsearch(formData.category,formData.searchterm);

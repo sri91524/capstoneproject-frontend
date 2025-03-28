@@ -14,7 +14,7 @@ function Cart({ cartItems, setCart }){
         updatedCart[index].quantity = (updatedCart[index].quantity || 1) + 1;
         setCart (updatedCart);       
       }
-
+      //handle subtracting quantity
       const handleSubtract = (index) =>{
         const updatedCart =[...cartItems];
         if(updatedCart[index].quantity >1){
@@ -23,7 +23,7 @@ function Cart({ cartItems, setCart }){
         }       
         
       }
-
+      //handle delete from cart
       const handleDelete = (index) =>{
         const updatedCart= cartItems.filter((items, i) => i !== index);
         setCart(updatedCart);        
@@ -39,8 +39,8 @@ function Cart({ cartItems, setCart }){
 
             console.log(item.price["$numberDecimal"]);
             console.log(itemQuantity);
-           
-            
+
+           //calculate total price and tax  
             if (!isNaN(itemPrice) && itemQuantity > 0) { 
                 const itemTotal = itemPrice * itemQuantity;
                 const itemTax = itemTotal * (item.tax/100)

@@ -29,6 +29,7 @@ function ViewProduct(){
         navigate(`/admin/addoreditproduct/${product._id}`);
     }
 
+    //delete product from admin console 
     const handleDelete = async(productId) => {
         
             const isConfirmed = window.confirm('Are you sure want to delete this product?');
