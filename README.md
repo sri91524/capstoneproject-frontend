@@ -1,4 +1,7 @@
-# React + Vite
+
+![GitHub Repo stars](https://img.shields.io/github/stars/sri91524/capstoneproject-frontend)
+
+# React + Vite 
 
 # RTT-60-2024 Class Repo
 
@@ -35,4 +38,3 @@ Vite, React, Javascript, Tailwindcss (Heroicons), Axios
 7. Exception handling performed using try..catch block
 
 
-![GitHub Repo stars](https://img.shields.io/github/stars/sri91524/capstoneproject-frontend)
