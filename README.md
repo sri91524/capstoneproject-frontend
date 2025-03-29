@@ -33,3 +33,6 @@ Vite, React, Javascript, Tailwindcss (Heroicons), Axios
 5. Products are stored in mongodb and managed via mongoose
 6. Axios is used to access thenewsapi and search by category/keyword
 7. Exception handling performed using try..catch block
+
+
+![GitHub Repo stars](https://img.shields.io/github/stars/sri91524/capstoneproject-frontend)
