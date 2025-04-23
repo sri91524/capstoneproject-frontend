@@ -1,40 +1,72 @@
+# 🛍️ Online Shopping App - Capstone Project
 
-![GitHub Repo stars](https://img.shields.io/github/stars/sri91524/capstoneproject-frontend)
+[![GitHub Repo stars](https://img.shields.io/github/stars/sri91524/capstoneproject-frontend)](https://github.com/sri91524/capstoneproject-frontend)
 
-# React + Vite 
+An online shopping application built as a capstone project for the RTT-60-2024 Software Engineering class. This responsive web app allows users to browse, search, manage, and shop for products — complete with cart functionality and backend CRUD operations.
 
-# RTT-60-2024 Class Repo
+---
 
-## Description
-Online Shopping 
+## 🚀 Live Demo
 
-### Technologies
-Vite, React, Javascript, Tailwindcss (Heroicons), Axios
+👉 [Visit the Live Site](https://sri-react-onlineshopping.netlify.app/)
 
-#### A link to live site -- https://sri-react-onlineshopping.netlify.app/
+---
 
-#### Components and API
-1. NewsAPI used ( Env file used to store API_Key and added in gitignore to avoid tracking in github)
-3. React components like SearchForm, productlist and cart are developed
-4. React hooks like useState, useEffect are used
-5. Interface is created to interact with api created for CRUD operation on db
+## 🛠️ Technologies Used
 
-##### Functionality
-1. Browsing products -- User can search products using search form based on category or searchterm
-2. Product Display   -- Products will be displayed based on the search 
-                        Addtocart functionality which enables user to add the product to the cart
-3. Shopping Cart     -- In cart, he can add/remove/delete product and based on it price and total will be calculated 
-                        No. of items in the cart can be viewed on the cart menu
-4. Manage Products   -- Products can be managed by adding / editing/ deleting the product
-5. Thirdparty Api    -- thenewsapi is used to get news articles
+- **Frontend:** React + Vite, TailwindCSS, Heroicons  
+- **API & Data:** Axios, MongoDB, Mongoose  
+- **Hooks:** `useState`, `useEffect`  
+- **Tools:** NewsAPI (with `.env` for API key security)
 
-###### Approach
-1. useState & localstorage is used to handle the cart state across pages
-2. State is stored in App component and is passed to Product page -> productlist component -> cart -> nav
-3. Based on iscartopen state, cart div is toggled to show on and off
-4. View product grid, add/edit product form is used to manage products
-5. Products are stored in mongodb and managed via mongoose
-6. Axios is used to access thenewsapi and search by category/keyword
-7. Exception handling performed using try..catch block
+---
 
+## 📦 Features & Functionality
 
+### 🔍 Browsing & Search
+- Search products by **category** or **keyword**
+- Results update dynamically using API queries
+
+### 🖼️ Product Display
+- Clean product listing with details
+- **Add to Cart** functionality from product card
+
+### 🛒 Shopping Cart
+- Add / remove / delete items from cart  
+- Cart updates quantity, price, and total dynamically  
+- Item count visible in the navbar
+
+### ✏️ Product Management (Admin)
+- Add, edit, or delete products  
+- Form-based interface for input  
+- Data stored in MongoDB via Mongoose
+
+### 📰 News API Integration
+- News articles fetched using [TheNewsAPI](https://www.thenewsapi.com/)  
+- Category/keyword-based search  
+- Displayed in a separate section
+
+---
+
+## 🧠 Architecture & Approach
+
+- **State Management:**  
+  `useState` combined with `localStorage` to persist cart data across pages
+
+- **Component Flow:**  
+  State initialized in `App.js` and passed through components:  
+  `App` → `ProductPage` → `ProductList` → `Cart` → `Nav`
+
+- **Conditional Rendering:**  
+  Based on `isCartOpen` state, the cart overlay is toggled on/off
+
+- **API Interaction:**  
+  - Axios used for HTTP requests  
+  - Custom interface for CRUD operations  
+  - NewsAPI integrated securely via `.env`
+
+- **Error Handling:**  
+  - Robust `try...catch` blocks for API calls  
+  - User feedback for invalid entries or API failures
+
+---

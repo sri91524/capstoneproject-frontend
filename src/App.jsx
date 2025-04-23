@@ -8,6 +8,7 @@ import ViewProduct from './pages/Admin/ViewProduct';
 import AddOrEditProduct from './pages/Admin/AddOrEditProduct';
 import SearchNews from './pages/SearchNews';
 import Nav from './components/Nav'
+import Footer from './components/Footer'
 
 function App() {
   const [cart, setCart] = useState(() => {
@@ -50,6 +51,7 @@ function App() {
         <Route path="/cart" element={<Cart cartItems={cart} setCart={setCart}/>} />
         <Route path="/searchnews" element={<SearchNews />} />
       </Routes>
+      <Footer/>
     </div>
   )
 }
